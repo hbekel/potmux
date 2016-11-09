@@ -1,4 +1,4 @@
 Contact point of any Licensor who wishes to receive modified
 Documentation:
 
-h.bekel@googlemail.com
+Henning Bekel <h.bekel@googlemail.com>
