@@ -39,7 +39,7 @@ Date "2016-10-24"
 Rev "1"
 Comp ""
 Comment1 ""
-Comment2 "Copyright Henning Bekel 2016.\\nThis documentation describes Open Hardware and is licensed under the CERN OHL v. 1.2.\\nYou may redistribute and modify this documentation under the terms of the CERN OHL v.1.2.\\n(http://ohwr.org/cernohl). This documentation is distributed WITHOUT ANY EXPRESS OR\\nIMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS\\nFOR A PARTICULAR PURPOSE. Please see the CERN OHL v.1.2 for applicable conditions"
+Comment2 "Copyright Henning Bekel 2016.\\nThis documentation describes Open Hardware and is licensed under the CERN OHL v. 1.2.\\nYou may redistribute and modify this documentation under the terms of the CERN OHL v.1.2.\\n(http://ohwr.org/cernohl)."
 Comment3 ""
 Comment4 ""
 $EndDescr
