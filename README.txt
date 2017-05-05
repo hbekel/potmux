@@ -1,4 +1,4 @@
-PotMux Rev.1 -- Pot line multiplexer for the C64
+PotMux Rev.2 -- Pot line multiplexer for the C64
 Copyright Henning Bekel 2016.
 Licensed under CERN OSH v.1.2 (see LICENSE.txt)
 
@@ -18,5 +18,6 @@ routed to the SID as usual, selected by PA6 and PA7.
 When /EN is low, the control port lines POTAX, POTAY, POTBX and POTBY
 are routed to the pins A1, A2, B1 and B2.
 
-On older C64 mainboards, the 4066 replaced by this board sits at
-U28. On the newer 250469 revision, the 4066 sits at U18.
+On older C64 mainboards, the 4066 replaced by this board is annotated
+with U28. On the newer 250469 revision, the 4066 is annotated with
+U18.
