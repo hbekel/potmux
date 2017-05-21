@@ -1,0 +1,8 @@
+PotMux
+
+Copyright 2017 Henning Bekel <h.bekel@googlemail.com>
+
+LICENSING
+
+Hardware licenced under CERN OHL v.1.2, see ./hardware/LICENSE.txt
+Software and firmware licenced under GNU GPLv3, see ./LICENSE
