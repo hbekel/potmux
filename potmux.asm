@@ -9,7 +9,7 @@
 done:   
 }
         
-BasicUpstart2(main)
+:BasicUpstart2(main)
 
 main:   sei
 
