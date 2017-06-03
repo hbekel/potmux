@@ -1,5 +1,4 @@
 PotMux v1.0
-===========
 
 The PotMux is a small hardware add-on for the C64 that allows the user
 to optionally route the control port potentiometer lines to a
@@ -13,12 +12,31 @@ The potmux utility contained in this archive can be used to prefix an
 existing C64 program with a specific potmux configuration for the
 Keyman64. The resulting program will first configure the Keyman64
 using its serial interface connected to the tapeport lines "Cassette
-Sense" and "Cassette Data" (see
-http://henning-bekel.de/keyman64/#serial-interface) and then run the
-original program.
+Sense" and "Cassette Data" and then run the original program.
+
+Usage: potmux [<option>...] <program> [<button|switch>...]
+
+Options:
+         -h, --help           : print this help text
+         -v, --version        : print version information
+         -o, --outfile <file> : output file (default: stdout)
+
+Arguments:
+         <program> : C64 program file to patch
+         <button>  : route a joystick button to a key
+         <switch>  : specify enable line and state
+
+Example:
+         potmux -o patched.prg game.prg a0:on b1:space
+
+Assuming that the PotMux EN line is connected to the keyman line on
+port a bit 0, the "a0:on" switch specification assures that the potmux
+will be enabled by pulling that line low. And assuming that one of the
+PotMux button output lines is connected to the keyman control line on
+port b bit 1, the "b1:space" will send a space key press when the
+corresponding button is pressed.
 
 LICENSING
-=========
-Hardware licenced under CERN OHL v.1.2, see ./hardware/LICENSE.txt
 
+Hardware licenced under CERN OHL v.1.2, see ./hardware/LICENSE.txt
 Software and firmware licenced under GNU GPLv3, see ./LICENSE
