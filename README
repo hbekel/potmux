@@ -1,8 +1,24 @@
-PotMux
+PotMux v1.0
+===========
 
-Copyright 2017 Henning Bekel <h.bekel@googlemail.com>
+The PotMux is a small hardware add-on for the C64 that allows the user
+to optionally route the control port potentiometer lines to a
+destination other than the SID. It is mainly intended to be used with
+the Keyman64 for the purpose of mapping additional joystick buttons
+connected to the potentiometer lines to user defined keystrokes.
+
+For details about the hardware, see ./hardware/README
+
+The potmux utility contained in this archive can be used to prefix an
+existing C64 program with a specific potmux configuration for the
+Keyman64. The resulting program will first configure the Keyman64
+using its serial interface connected to the tapeport lines "Cassette
+Sense" and "Cassette Data" (see
+http://henning-bekel.de/keyman64/#serial-interface) and then run the
+original program.
 
 LICENSING
-
+=========
 Hardware licenced under CERN OHL v.1.2, see ./hardware/LICENSE.txt
+
 Software and firmware licenced under GNU GPLv3, see ./LICENSE
