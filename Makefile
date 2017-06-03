@@ -3,7 +3,7 @@ VERSION=1.0
 CC?=gcc
 CFLAGS=-std=gnu99 -Wall -O2 -DVERSION=$(VERSION)
 MINGW=i686-w64-mingw32
-KASM=kasm4
+KASM?=kasm4
 
 .PHONY: all clean
 
