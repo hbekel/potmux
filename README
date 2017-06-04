@@ -1,4 +1,8 @@
-PotMux v1.0
+PotMux -- Hardware add-on to reroute C64 control port pot lines
+(C) 2017 Henning Bekel <h.bekel@googlemail.com>
+
+This project is currently in early beta state and things may 
+change without notice.
 
 The PotMux is a small hardware add-on for the C64 that allows the user
 to optionally route the control port potentiometer lines to a
@@ -33,8 +37,8 @@ Assuming that the PotMux EN line is connected to the keyman line on
 port a bit 0, the "a0:on" switch specification assures that the potmux
 will be enabled by pulling that line low. And assuming that one of the
 PotMux button output lines is connected to the keyman control line on
-port b bit 1, the "b1:space" will send a space key press when the
-corresponding button is pressed.
+port b bit 1, the "b1:space" will configure the keyman to send a space
+key press when the corresponding button is pressed.
 
 LICENSING
 
