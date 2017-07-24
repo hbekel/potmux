@@ -18,7 +18,7 @@ Button buttons[4] = {
 };
 uint8_t current = 0;
 
-Line _line = { .arg = 0, .offset = 0x2f, .parsed = false };
+Line _line = { .port = 0, .value = 0, .offset = 0x2f, .parsed = false };
 Line *line = &_line;
 
 //-----------------------------------------------------------------------------
@@ -58,14 +58,14 @@ bool parse(char* spec) {
   char *arg;
   
   if((strlen(spec) >= 4) &&
-     (spec[0] == 'a' || spec[0] == 'b') &&
+     (spec[0] >= 'a' && spec[0] <= 'z') &&
      (spec[1] >= '0' && spec[1] <= '7') &&
      (spec[2] == ':')) {
 
     bit = spec[1] - '0';
     bit |= (spec[0] - 'a')<<3;   
     arg = spec+3;
-    
+
     if(isKey(arg)) {
       button = &(buttons[current++]);
       
@@ -84,7 +84,9 @@ bool parse(char* spec) {
         fprintf(stderr, "error: \"%s\": on/off line already specified\n", spec);
         return false;
       }      
-      line->arg = (bit << 4) | getSwitchValue(arg);
+      line->port = bit;
+      line->value = getSwitchValue(arg);
+      
       return line->parsed = true;
     }      
     fprintf(stderr, "error: \"%s\": unknown key name: \"%s\"\n", spec, arg);
@@ -215,10 +217,11 @@ int main(int argc, char **argv) {
 
   // install switch...
   if(line->parsed) {
-    code[line->offset+6] = line->arg;
+    code[line->offset+6] = line->port;
+    code[line->offset+11] = line->value;
   }
   else { // nop...
-    for(int i=0; i<10; i++) {
+    for(int i=0; i<15; i++) {
       code[line->offset+i] = 0xea;
     }
   }
@@ -226,8 +229,8 @@ int main(int argc, char **argv) {
   // determine start of payload
   uint16_t start = 0x0801+size;
 
-  code[0xa0] = (uint8_t) (start & 0xff);
-  code[0xa1] = (uint8_t) (start >> 8);
+  code[0xa5] = (uint8_t) (start & 0xff);
+  code[0xa6] = (uint8_t) (start >> 8);
 
   if(outfile) {
     if((out = fopen(outfile, "wb")) == NULL) {

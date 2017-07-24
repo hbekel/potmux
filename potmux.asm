@@ -36,6 +36,9 @@ e:      lda #Command.set
 
         lda #$00
         jsr serial.write
+
+        lda #$00
+        jsr serial.write
         
 close:  jsr serial.close
 

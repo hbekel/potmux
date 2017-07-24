@@ -11,7 +11,8 @@ typedef struct {
 } Button;
 
 typedef struct {
-  uint8_t arg;
+  uint8_t port;
+  uint8_t value;
   uint8_t offset;
   bool parsed;
 } Line;
