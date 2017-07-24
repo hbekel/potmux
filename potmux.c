@@ -73,6 +73,10 @@ bool parse(char* spec) {
         fprintf(stderr, "error: \"%s\": all four buttons already defined\n", spec);
         return false;
       }
+      if((bit>>3) > 1) {
+        fprintf(stderr, "error: \"%s\": buttons can only be mapped to native ports (a or b)\n", spec);
+        return false;
+      }
       
       button->bit = bit;
       button->key = getKey(arg);
