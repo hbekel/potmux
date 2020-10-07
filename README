@@ -10,7 +10,7 @@ destination other than the SID. It is mainly intended to be used with
 the Keyman64 for the purpose of mapping additional joystick buttons
 connected to the potentiometer lines to user defined keystrokes.
 
-For details about the hardware, see ./hardware/README
+For details about the hardware, see ./hardware/README.txt
 
 The potmux utility contained in this archive can be used to prefix an
 existing C64 program with a specific potmux configuration for the
@@ -42,5 +42,4 @@ key press when the corresponding button is pressed.
 
 LICENSING
 
-Hardware licenced under CERN OHL v.1.2, see ./hardware/LICENSE.txt
-Software and firmware licenced under GNU GPLv3, see ./LICENSE
+Hardware and Software licensed under MIT-style licensing schemes
