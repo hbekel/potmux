@@ -27,7 +27,7 @@ uint8_t getKey(char *str) {
   for(int i=0; i<sizeof(symbols)/sizeof(Symbol); i++) {
     if(strcasecmp(symbols[i].name, str) == 0) {
       return (uint8_t) i;
-    }  
+    }
   }
   return 0xff;
 }
@@ -56,19 +56,19 @@ bool parse(char* spec) {
   Button *button;
   uint8_t bit;
   char *arg;
-  
+
   if((strlen(spec) >= 4) &&
      (spec[0] >= 'a' && spec[0] <= 'z') &&
      (spec[1] >= '0' && spec[1] <= '7') &&
      (spec[2] == ':')) {
 
     bit = spec[1] - '0';
-    bit |= (spec[0] - 'a')<<3;   
+    bit |= (spec[0] - 'a')<<3;
     arg = spec+3;
 
     if(isKey(arg)) {
       button = &(buttons[current++]);
-      
+
       if(current > 4) {
         fprintf(stderr, "error: \"%s\": all four buttons already defined\n", spec);
         return false;
@@ -77,22 +77,22 @@ bool parse(char* spec) {
         fprintf(stderr, "error: \"%s\": buttons can only be mapped to native ports (a or b)\n", spec);
         return false;
       }
-      
+
       button->bit = bit;
       button->key = getKey(arg);
       return button->parsed = true;
     }
     else if(isSwitch(arg)) {
-      
+
       if(line->parsed) {
         fprintf(stderr, "error: \"%s\": on/off line already specified\n", spec);
         return false;
-      }      
+      }
       line->port = bit;
       line->value = getSwitchValue(arg);
-      
+
       return line->parsed = true;
-    }      
+    }
     fprintf(stderr, "error: \"%s\": unknown key name: \"%s\"\n", spec, arg);
   }
   return false;
@@ -105,34 +105,34 @@ int main(int argc, char **argv) {
   int result = EXIT_SUCCESS;
 
   FILE* in;
-  
+
   FILE* out = stdout;
   char* outfile = NULL;
-  
+
   uint8_t *data = calloc(1, sizeof(uint8_t));
   uint16_t load_address;
-  
+
   struct option options[] = {
     { "help",     no_argument,       0, 'h' },
     { "version",  no_argument,       0, 'v' },
-    { "outfile",  required_argument, 0, 'o' },    
+    { "outfile",  required_argument, 0, 'o' },
     { 0, 0, 0, 0 },
   };
   int option, option_index;
-  
+
   while(1) {
     option = getopt_long(argc, argv, "hvo:", options, &option_index);
 
     if(option == -1)
       break;
-    
+
     switch (option) {
-      
+
     case 'h':
       help();
       goto done;
-      break;      
-      
+      break;
+
     case 'v':
       version();
       goto done;
@@ -141,14 +141,14 @@ int main(int argc, char **argv) {
     case 'o':
       outfile = strdup(optarg);
       break;
-            
+
     case '?':
     case ':':
       result = EXIT_FAILURE;
       goto done;
-    }    
+    }
   }
-  
+
   argc -= optind;
   argv += optind;
 
@@ -157,13 +157,13 @@ int main(int argc, char **argv) {
     return EXIT_FAILURE;
   }
 
-  // first arg is filename...  
+  // first arg is filename...
   char *filename = argv[0];
   argc--; argv++;
 
   // check if it is readable and has data...
   struct stat st;
-  
+
   if((in = fopen(filename, "rb")) == NULL) {
     goto error;
   }
@@ -242,7 +242,7 @@ int main(int argc, char **argv) {
       goto fail;
     }
   }
-  
+
   // write out payload
   for(int i=0; i<code_size; i++) {
     putc(code[i], out);
@@ -251,12 +251,12 @@ int main(int argc, char **argv) {
   for(int i=code_size-2; i<size; i++) {
     putc(data[i], out);
   }
-  
+
   for(int i=0; i<code_size; i++) {
     putc(data[i], out);
   }
   fclose(out);
-  
+
  done:
   free(data);
   return result;
@@ -275,7 +275,7 @@ int main(int argc, char **argv) {
 void version() {
   printf("Potmux v%.1f\n"
          "Patches C64 programs with potmux configuration\n"
-         "Copyright (C) 2017 Henning Bekel.\n"
+         "Copyright (C) 2020 Henning Liebenau.\n"
          "License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>.\n"
          "This is free software: you are free to change and redistribute it.\n"
          "There is NO WARRANTY, to the extent permitted by law.\n", VERSION);
@@ -283,7 +283,7 @@ void version() {
 
 void help() {
   version();
-  
+
   printf("\n"
          "Usage: potmux [<option>...] <program> [<button|switch>...]\n"
          "\n"
@@ -305,6 +305,6 @@ void help() {
          "will be enabled by pulling that line low. And assuming that one of the\n"
          "PotMux button output lines is connected to the keyman control line on\n"
          "port b bit 1, the \"b1:space\" will send a space key press when the\n"
-         "corresponding button is pressed.\n"
-         );         
+         "corresponding button is pressed.\n\n"
+         );
 }

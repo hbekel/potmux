@@ -1,6 +1,6 @@
 PROJECT=potmux
-REVISION=1
-ZIPFILE=$(PROJECT)-gerber-r$(REVISION).zip
+REVISION=2
+ZIPFILE=$(PROJECT)-r$(REVISION)-gerber.zip
 
 all: $(ZIPFILE)
 
@@ -13,14 +13,15 @@ FILES=$(PROJECT).drl\
 	$(PROJECT).gts
 
 rename:
-	$(shell [ -f $(PROJECT)-B.Cu.gbl ] && mv $(PROJECT)-B.Cu.gbl $(PROJECT).gbl)
-	$(shell [ -f $(PROJECT)-B.Mask.gbs ] && mv $(PROJECT)-B.Mask.gbs $(PROJECT).gbs)
-	$(shell [ -f $(PROJECT)-F.Cu.gtl ] && mv $(PROJECT)-F.Cu.gtl $(PROJECT).gtl)
-	$(shell [ -f $(PROJECT)-F.Mask.gts ] && mv $(PROJECT)-F.Mask.gts $(PROJECT).gts)
-	$(shell [ -f $(PROJECT)-F.SilkS.gto ] && mv $(PROJECT)-F.SilkS.gto $(PROJECT).gto)
-	$(shell [ -f $(PROJECT)-B.SilkS.gbo ] && mv $(PROJECT)-B.SilkS.gbo $(PROJECT).gbo)
-	$(shell [ -f $(PROJECT)-Edge.Cuts.gm1 ] && mv $(PROJECT)-Edge.Cuts.gm1 $(PROJECT).gml)
+	$(shell [ -f $(PROJECT)-B_Cu.gbl ] && mv $(PROJECT)-B_Cu.gbl $(PROJECT).gbl)
+	$(shell [ -f $(PROJECT)-B_Mask.gbs ] && mv $(PROJECT)-B_Mask.gbs $(PROJECT).gbs)
+	$(shell [ -f $(PROJECT)-F_Cu.gtl ] && mv $(PROJECT)-F_Cu.gtl $(PROJECT).gtl)
+	$(shell [ -f $(PROJECT)-F_Mask.gts ] && mv $(PROJECT)-F_Mask.gts $(PROJECT).gts)
+	$(shell [ -f $(PROJECT)-F_SilkS.gto ] && mv $(PROJECT)-F_SilkS.gto $(PROJECT).gto)
+	$(shell [ -f $(PROJECT)-B_SilkS.gbo ] && mv $(PROJECT)-B_SilkS.gbo $(PROJECT).gbo)
+	$(shell [ -f $(PROJECT)-Edge_Cuts.gm1 ] && mv $(PROJECT)-Edge_Cuts.gm1 $(PROJECT).gml)
 	$(shell chmod -x $(PROJECT)*)
+        $(shell rm -f *.gbrjob)
 
 $(ZIPFILE): rename $(FILES)
 	zip $@ $(FILES)

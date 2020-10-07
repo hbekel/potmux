@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name potmux-rescue)(type Legacy)(uri ${KIPRJMOD}/potmux-rescue.lib)(options "")(descr ""))
+)

@@ -1,5 +1,35 @@
-EESchema Schematic File Version 4
-EELAYER 30 0
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:potmux-cache
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -9,12 +39,12 @@ Date "2017-04-27"
 Rev "2"
 Comp ""
 Comment1 ""
-Comment2 ""
-Comment3 "See LICENSE.txt"
-Comment4 "Copyright (c) 2020 Henning Liebenau <henning.liebenau@protonmail.com>"
+Comment2 "Copyright Henning Bekel 2016.\\nThis documentation describes Open Hardware and is licensed under the CERN OHL v. 1.2.\\nYou may redistribute and modify this documentation under the terms of the CERN OHL v.1.2.\\n(http://ohwr.org/cernohl)."
+Comment3 ""
+Comment4 ""
 $EndDescr
 $Comp
-L potmux-rescue:CONN_01X07 P1
+L CONN_01X07 P1
 U 1 1 580E7A37
 P 1450 1650
 F 0 "P1" H 1450 2050 50  0000 C CNN
@@ -25,7 +55,7 @@ F 3 "" H 1450 1650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:CONN_01X07 P3
+L CONN_01X07 P3
 U 1 1 580E7AAB
 P 1900 1650
 F 0 "P3" H 1900 2050 50  0000 C CNN
@@ -48,7 +78,7 @@ PA7
 Text Label 1250 1850 2    60   ~ 0
 PA6
 $Comp
-L potmux-rescue:GND #PWR01
+L GND #PWR01
 U 1 1 580E7B37
 P 1250 1950
 F 0 "#PWR01" H 1250 1700 50  0001 C CNN
@@ -63,7 +93,7 @@ POTAY
 Text Label 2100 1950 0    60   ~ 0
 POTAX
 $Comp
-L potmux-rescue:PWR_FLAG #FLG02
+L PWR_FLAG #FLG02
 U 1 1 580E7FAD
 P 750 7500
 F 0 "#FLG02" H 750 7595 50  0001 C CNN
@@ -74,7 +104,7 @@ F 3 "" H 750 7500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:PWR_FLAG #FLG03
+L PWR_FLAG #FLG03
 U 1 1 580E7FCA
 P 1200 7500
 F 0 "#FLG03" H 1200 7595 50  0001 C CNN
@@ -85,7 +115,7 @@ F 3 "" H 1200 7500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:GND #PWR04
+L GND #PWR04
 U 1 1 580E8032
 P 1200 7500
 F 0 "#PWR04" H 1200 7250 50  0001 C CNN
@@ -96,7 +126,7 @@ F 3 "" H 1200 7500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:VCC #PWR05
+L VCC #PWR05
 U 1 1 580E8048
 P 750 7500
 F 0 "#PWR05" H 750 7350 50  0001 C CNN
@@ -107,7 +137,7 @@ F 3 "" H 750 7500 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L potmux-rescue:4052 U1
+L 4052 U1
 U 1 1 580E8125
 P 4500 1950
 F 0 "U1" H 4600 1950 50  0000 C CNN
@@ -122,7 +152,7 @@ POTAX
 Text Label 5200 1750 0    60   ~ 0
 POTAY
 $Comp
-L potmux-rescue:GND #PWR06
+L GND #PWR06
 U 1 1 580E82C2
 P 5200 2450
 F 0 "#PWR06" H 5200 2200 50  0001 C CNN
@@ -133,7 +163,7 @@ F 3 "" H 5200 2450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:GND #PWR07
+L GND #PWR07
 U 1 1 580E82E0
 P 3800 2250
 F 0 "#PWR07" H 3800 2000 50  0001 C CNN
@@ -162,7 +192,7 @@ Text Label 3800 2450 2    60   ~ 0
 Text Label 3800 2550 2    60   ~ 0
 PA6
 $Comp
-L potmux-rescue:4052 U2
+L 4052 U2
 U 1 1 580E8430
 P 4500 3800
 F 0 "U2" H 4600 3800 50  0000 C CNN
@@ -177,7 +207,7 @@ POTBX
 Text Label 5200 3600 0    60   ~ 0
 POTBY
 $Comp
-L potmux-rescue:GND #PWR08
+L GND #PWR08
 U 1 1 580E84A4
 P 5200 4300
 F 0 "#PWR08" H 5200 4050 50  0001 C CNN
@@ -188,7 +218,7 @@ F 3 "" H 5200 4300 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:GND #PWR09
+L GND #PWR09
 U 1 1 580E84FF
 P 3800 4100
 F 0 "#PWR09" H 3800 3850 50  0001 C CNN
@@ -217,7 +247,7 @@ POTY
 Text Label 3150 4300 2    60   ~ 0
 ~EN
 $Comp
-L potmux-rescue:R R1
+L R R1
 U 1 1 580E88C9
 P 3350 4150
 F 0 "R1" V 3430 4150 50  0000 C CNN
@@ -228,10 +258,10 @@ F 3 "" H 3350 4150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3150 4300 3350 4300
+	3150 4300 3800 4300
 Connection ~ 3350 4300
 $Comp
-L potmux-rescue:VCC #PWR010
+L VCC #PWR010
 U 1 1 580E897D
 P 3350 4000
 F 0 "#PWR010" H 3350 3850 50  0001 C CNN
@@ -242,7 +272,7 @@ F 3 "" H 3350 4000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:VCC #PWR011
+L VCC #PWR011
 U 1 1 580E7B51
 P 2100 1350
 F 0 "#PWR011" H 2100 1200 50  0001 C CNN
@@ -253,7 +283,7 @@ F 3 "" H 2100 1350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:VCC #PWR012
+L VCC #PWR012
 U 1 1 580E9B1D
 P 4500 1300
 F 0 "#PWR012" H 4500 1150 50  0001 C CNN
@@ -264,7 +294,7 @@ F 3 "" H 4500 1300 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:GND #PWR013
+L GND #PWR013
 U 1 1 580E9B87
 P 4500 2600
 F 0 "#PWR013" H 4500 2350 50  0001 C CNN
@@ -275,7 +305,7 @@ F 3 "" H 4500 2600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:VCC #PWR014
+L VCC #PWR014
 U 1 1 580E9C6A
 P 4500 3150
 F 0 "#PWR014" H 4500 3000 50  0001 C CNN
@@ -286,7 +316,7 @@ F 3 "" H 4500 3150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:GND #PWR015
+L GND #PWR015
 U 1 1 580E9C8D
 P 4500 4450
 F 0 "#PWR015" H 4500 4200 50  0001 C CNN
@@ -301,7 +331,7 @@ NoConn ~ 2100 1550
 NoConn ~ 2100 1750
 NoConn ~ 2100 1850
 $Comp
-L potmux-rescue:GND #PWR016
+L GND #PWR016
 U 1 1 5901CAA6
 P 1250 2600
 F 0 "#PWR016" H 1250 2350 50  0001 C CNN
@@ -322,7 +352,7 @@ A2
 Text Label 1250 3100 2    60   ~ 0
 A1
 $Comp
-L potmux-rescue:CONN_01X06 P4
+L CONN_01X06 P4
 U 1 1 5901CA9B
 P 1450 2850
 F 0 "P4" H 1450 3200 50  0000 C CNN
@@ -333,7 +363,7 @@ F 3 "" H 1450 2850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:GND #PWR017
+L GND #PWR017
 U 1 1 5979EB0A
 P 1950 3100
 F 0 "#PWR017" H 1950 2850 50  0001 C CNN
@@ -354,7 +384,7 @@ A2
 Text Label 1950 2600 2    60   ~ 0
 A1
 $Comp
-L potmux-rescue:CONN_01X06 P2
+L CONN_01X06 P2
 U 1 1 5979EB15
 P 2150 2850
 F 0 "P2" H 2150 3200 50  0000 C CNN
@@ -365,7 +395,7 @@ F 3 "" H 2150 2850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:C_Small C1
+L C_Small C1
 U 1 1 5979F45F
 P 6450 1250
 F 0 "C1" H 6460 1320 50  0000 L CNN
@@ -376,7 +406,7 @@ F 3 "" H 6450 1250 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:VCC #PWR018
+L VCC #PWR018
 U 1 1 5979F527
 P 6450 1150
 F 0 "#PWR018" H 6450 1000 50  0001 C CNN
@@ -387,7 +417,7 @@ F 3 "" H 6450 1150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:GND #PWR019
+L GND #PWR019
 U 1 1 5979F573
 P 6450 1350
 F 0 "#PWR019" H 6450 1100 50  0001 C CNN
@@ -398,7 +428,7 @@ F 3 "" H 6450 1350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:C_Small C2
+L C_Small C2
 U 1 1 5979F66F
 P 6900 1250
 F 0 "C2" H 6910 1320 50  0000 L CNN
@@ -409,7 +439,7 @@ F 3 "" H 6900 1250 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:VCC #PWR020
+L VCC #PWR020
 U 1 1 5979F675
 P 6900 1150
 F 0 "#PWR020" H 6900 1000 50  0001 C CNN
@@ -420,7 +450,7 @@ F 3 "" H 6900 1150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L potmux-rescue:GND #PWR021
+L GND #PWR021
 U 1 1 5979F67B
 P 6900 1350
 F 0 "#PWR021" H 6900 1100 50  0001 C CNN
@@ -430,6 +460,4 @@ F 3 "" H 6900 1350 50  0000 C CNN
 	1    6900 1350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3350 4300 3800 4300
 $EndSCHEMATC

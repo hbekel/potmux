@@ -1,7 +1,7 @@
 PotMux -- Hardware add-on to reroute C64 control port pot lines
-(C) 2017 Henning Bekel <h.bekel@googlemail.com>
+(C) 2020 Henning Liebenau <henning.liebenau@protonmail.com>
 
-This project is currently in early beta state and things may 
+This project is currently in early beta state and things may
 change without notice.
 
 The PotMux is a small hardware add-on for the C64 that allows the user
